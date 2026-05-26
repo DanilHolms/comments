@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments Board</title>
+    <style>
+        .comm {
+            padding: 10px;
+        }
+        .author {
+            font-weight: bold;
+        }
+        .ts{
+            color: gray;
+            font-size: 80%;
+        }
+        .message{
+            padding: 10px;
+        }
+        textarea{
+            display: block;
+            width: 300px;
+            margin: 5px;
+        }
+        input, button{
+            margin: 5px;
+        }
+        input {
+            width: 200px;
+        }
+        button{
+            width: 85px;
+        }
+    </style>
+</head>
+<body>
+    <p>test text</p>
+    <form method="post" action="/new">
+        <textarea name="message" rows="5"></textarea>
+        <input type="text" name="author" placeholder="Your name">
+        <button type="submit">Send</button>
+    </form>
+    <div class="comments">
+    {% for c in comments %}
+        <div class="comm">
+            <div class="info">
+                <span class="author">{{ c.author }}</span> 
+                <span class="ts">{# c.ts.strftime("%d. %B %H:%M") #}</span>
+            </div>
+            <div class="message">
+                {{ c.content }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
