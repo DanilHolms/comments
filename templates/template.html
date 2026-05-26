@@ -45,7 +45,7 @@
         <div class="comm">
             <div class="info">
                 <span class="author">{{ c.author }}</span> 
-                <span class="ts">{# c.ts.strftime("%d. %B %H:%M") #}</span>
+                <span class="ts">{{ c.time.strftime("%d. %B %H:%M") }}</span>
             </div>
             <div class="message">
                 {{ c.content }}
