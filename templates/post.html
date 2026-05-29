@@ -2,8 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Comments Board</title>
+    <title>{{ post.title }}</title>
     <style>
+        .post {
+            padding: 10px;
+        }
+        .title{
+            font-size: x-large;
+        }
+        .content{
+            padding: 5px;
+            margin: 5px;
+            background-color: lightgray;
+        }
+        .time{
+            color: gray;
+        }
         .comm {
             padding: 10px;
         }
@@ -34,10 +48,17 @@
     </style>
 </head>
 <body>
-    <p>test text</p>
-    <form method="post" action="/new">
+    <div class="post">
+        <span class="title">{{ post.title }}</span> 
+        <div class="inside">
+            <div class="content">{{ post.content }}</div>
+            <span class="time">{{ post.time.strftime("%d. %B %H:%M") }}</span>
+        </div>
+    </div>
+    <form method="post" action="/newComment">
         <textarea name="message" rows="5"></textarea>
         <input type="text" name="author" placeholder="Your name">
+        <input type="hidden" name="post_id" value="{{ post.id }}">
         <button type="submit">Send</button>
     </form>
     <div class="comments">

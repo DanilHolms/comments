@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+    <style>
+        .post {
+            padding: 10px;
+        }
+        .title{
+            font-size: x-large;
+        }
+        .content{
+            padding: 5px;
+            margin: 5px;
+            background-color: lightgray;
+        }
+        .time{
+            color: gray;
+        }
+        .comm {
+            padding: 10px;
+        }
+        .author {
+            font-weight: bold;
+        }
+        .ts{
+            color: gray;
+            font-size: 80%;
+        }
+        .message{
+            padding: 10px;
+        }
+        textarea{
+            display: block;
+            width: 300px;
+            margin: 5px;
+        }
+        input, button{
+            margin: 5px;
+        }
+        input {
+            width: 200px;
+        }
+        button{
+            width: 85px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="/post/new">New post</a>
+    </div>
+    {% for post in posts %}
+    <div class="postAbst">
+        <span class="time">{{ post.time.strftime("%d. %B %H:%M") }}</span>
+        <a class="title" href="/post/{{ post.url }}">{{ post.title }}</a> 
+    </div>
+    {% endfor %}
+</body>
+</html>

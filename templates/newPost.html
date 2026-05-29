@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments Board</title>
+    <style>
+        textarea{
+            display: block;
+            width: 300px;
+            margin: 5px;
+        }
+        input, button{
+            margin: 5px;
+        }
+        .title{
+            width: 300px;
+        }
+        .url {
+            width: 200px;
+        }
+        button{
+            width: 85px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/post/new">
+        <input clas="title" type="text" name="title" placeholder="Title">
+        <textarea name="content" rows="5"></textarea>
+        <input class="url" type="text" name="url" placeholder="Post url">
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>
