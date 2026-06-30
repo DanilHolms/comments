@@ -3,49 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Posts</title>
-    <style>
-        .post {
-            padding: 10px;
-        }
-        .title{
-            font-size: x-large;
-        }
-        .content{
-            padding: 5px;
-            margin: 5px;
-            background-color: lightgray;
-        }
-        .time{
-            color: gray;
-        }
-        .comm {
-            padding: 10px;
-        }
-        .author {
-            font-weight: bold;
-        }
-        .ts{
-            color: gray;
-            font-size: 80%;
-        }
-        .message{
-            padding: 10px;
-        }
-        textarea{
-            display: block;
-            width: 300px;
-            margin: 5px;
-        }
-        input, button{
-            margin: 5px;
-        }
-        input {
-            width: 200px;
-        }
-        button{
-            width: 85px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div>

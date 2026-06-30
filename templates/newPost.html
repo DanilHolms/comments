@@ -3,25 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Comments Board</title>
-    <style>
-        textarea{
-            display: block;
-            width: 300px;
-            margin: 5px;
-        }
-        input, button{
-            margin: 5px;
-        }
-        .title{
-            width: 300px;
-        }
-        .url {
-            width: 200px;
-        }
-        button{
-            width: 85px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <form method="post" action="/post/new">
